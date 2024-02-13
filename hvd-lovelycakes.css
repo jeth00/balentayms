@@ -98,15 +98,11 @@ body {
     display: flex;
 }
 
-.valentines-card audio {
-    display: none;
-    margin: 20px auto;
-    padding-bottom: 30px;
-}
+
 
 .valentines-card audio::-webkit-media-controls-panel {
     background-color: #ff4d4d; /* Change this to your desired color */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
 }
 
@@ -122,48 +118,36 @@ body {
 
 .valentines-card.open .inside-card audio {
     display: flex;
-    margin: 0 auto;
+    margin-left: 0;
 }
 
 
 
 
-/* Media queries for responsiveness */
 @media only screen and (max-width: 600px) {
     body {
-        padding: 10px; /* Adjusted padding for smaller screens */
+        padding: 30px; /* Adjusted padding for smaller screens */
     }
 
     .valentines-card {
-        max-width: 90%; /* Adjusted maximum width for smaller screens */
-    }
-
-    .front-card,
-    .inside-card {
-        padding: 10px; /* Adjusted padding for smaller screens */
-    }
-
-    .front-text h3 {
-        font-size: 16px; /* Adjusted font size for smaller screens */
-    }
-
-    .front-img,
-    .inside-img {
-        width: 80%; /* Adjusted image width for smaller screens */
-        max-height: 40%; /* Adjusted max height for smaller screens */
-        margin: 0 auto;
-    }
-
-    .inside-text p {
-        font-size: 14px; /* Adjusted font size for smaller screens */
+        max-width: 80%; /* Adjusted maximum width for smaller screens */
     }
 
     .inside-card button {
         margin-top: 10px; /* Adjusted margin for smaller screens */
     }
 
-    .click-icon {
-        max-width: 80px;
-        max-height: 80px;
+    .valentines-card audio {
+        padding-bottom: 30px; /* Adjusted padding for smaller screens */
     }
+
+    .valentines-card audio::-webkit-media-controls-panel {
+        border-radius: 20px; /* Adjusted rounded corners for smaller screens */
+    }
+}
+
+.click-icon{
+    padding-bottom: 80px;
+    max-width: 100px;
+    max-height: 100px;
 }

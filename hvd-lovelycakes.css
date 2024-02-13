@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 16px;
+    height: 100vh;
+    background: #ffc0cb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valentines-card {
+    perspective: 1000px;
+    width: 100%; /* Adjusted width for responsiveness */
+    max-width: 450px; /* Added maximum width */
+    height: 100%;
+    position: relative;
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.front-card,
+.inside-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 24px 40px -8px #ff1493;
+    padding: 20px; /* Increased padding for smaller screens */
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.front-card {
+    transform: rotateY(0deg);
+}
+
+.inside-card {
+    display: none;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.front-text,
+.inside-text {
+    color: #A60657;
+    font-size: 18px;
+}
+
+.front-img,
+.inside-img {
+    width: 50%;
+    max-height: 50%;
+    margin: 0 auto;
+}
+
+.front-text button,
+.inside-card button {
+    background-color: #ff6b6b; /* Red background */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.front-text button:hover,
+.inside-card button:hover {
+    background-color: #ff4d4d; /* Darker red on hover */
+}
+
+.inside-card button {
+    margin-top: 20px; /* Adjusted margin for smaller screens */
+}
+
+.valentines-card.open .card-container {
+    transform: rotateY(180deg);
+}
+
+.valentines-card.open .front-card {
+    display: none;
+}
+
+.valentines-card.open .inside-card {
+    display: flex;
+}
+
+.valentines-card audio {
+    display: none;
+    margin: 20px auto;
+    padding-bottom: 30px;
+}
+
+.valentines-card audio::-webkit-media-controls-panel {
+    background-color: #ff4d4d; /* Change this to your desired color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+.valentines-card audio::-webkit-media-controls-play-button,
+.valentines-card audio::-webkit-media-controls-volume-slider {
+    background-color: #ff4d4d; /* White play button and volume slider background */
+}
+
+.valentines-card audio::-webkit-media-controls-timeline {
+    height: 4px; /* Height of the timeline */
+    background-color: #ff4d4d; /* White color for the timeline */
+}
+
+.valentines-card.open .inside-card audio {
+    display: flex;
+    margin: 0 auto;
+}
+
+
+
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+
+    .valentines-card {
+        max-width: 80%; /* Adjusted maximum width for smaller screens */
+    }
+
+    .inside-card button {
+        margin-top: 10px; /* Adjusted margin for smaller screens */
+    }
+}
+
+.click-icon{
+    max-width: 100px;
+    max-height: 100px;
+}
